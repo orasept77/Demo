@@ -1,0 +1,27 @@
+body, html {
+    margin: 0;
+    // font-family: 'Lato', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    &:disabled {
+        opacity: 0.5;
+        filter: grayscale(1);
+        pointer-events: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}

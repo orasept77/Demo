@@ -1,0 +1,80 @@
+body, body::backdrop {
+    background: var(--background);
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 100%);
+    min-height: calc(var(--viewPortHeight) - 70px);
+    margin: 10px;
+    grid-gap: 20px;
+}
+
+.panel-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: max-content;
+    box-shadow: var(--shadow-1);
+    transition: transform 0.33s;
+
+    .panel {
+        position: relative;
+        border-bottom: 1px solid var(--porcelain);
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+
+        &.first {
+            margin-top: 5px;
+            padding-top: 25px;
+            border-top: 1px solid var(--porcelain) !important;
+
+            .panel-title {
+                top: 0px;
+            }
+        }
+
+        &:last-child {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        &-title {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 9px;
+            font-weight: bold;
+            border: 1px solid var(--porcelain);
+            padding: 3px 10px;
+            border-radius: 10px;
+            color: var(--twilight-1);
+            background: var(--porcelain);
+            text-transform: uppercase;
+            text-shadow: var(--background);
+
+            &.left {
+                left: 0;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+}
+
+.icon {
+    font-size: 30px;
+    color: var(--blue-2);
+    transition: color 0.33s, opacity 0.33s;
+
+    &:hover {
+        color: var(--blue);
+    }
+}
